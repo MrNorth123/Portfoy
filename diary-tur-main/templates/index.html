@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>programcının günlüğü</title>
+</head>
+<body>
+  <header class="header">
+    <a href="/index">
+    <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+  </a>
+    <ul class="main-list">
+          <div class="logout-btn">
+            <a href="{{ url_for('logout') }}" class="btn">Çıkış Yap</a>
+          </div> 
+    </ul>
+  </header>
+  <main>
+    {% block content %}
+    <h1 class="main__title">Kayıtlarım</h1>
+    <ul class="cards-list">
+      {% for el in cards%}
+      <li class="card">
+        <a class="card__link" href="/card/{{el.id}}">
+          <img class="card__img" src="../static/img/notebook.png" width="250" height="250" alt="post_icon">
+          <div class="card__text">
+            <h2 class="card__title">{{el.title}}</h2>
+            <p class="card__subtitle">{{el.subtitle}}</p>
+          </div>
+        </a>
+          <!-- "Create" kartı hariç -->
+  {% if not el.create %}
+  <div class="delete-container">
+    <label for="delete-toggle-{{el.id}}" class="delete-btn">
+      <img src="../static/img/trash_can.png" alt="Sil" width="35" height="35">
+    </label>
+    <input type="checkbox" id="delete-toggle-{{el.id}}" class="delete-checkbox">
+    <div class="confirmation">
+      <p>Silmek istediğinizden emin misiniz?</p>
+      <a href="/delete/{{el.id}}" class="confirm-btn">Evet</a>
+      <label for="delete-toggle-{{el.id}}" class="cancel-btn">Hayır</label>
+    </div>
+  </div>
+  {% endif %}
+      </li>
+      {% endfor %}
+      <li class="card card--creat">
+          <a class="creat__link" href="{{url_for('create')}}"></a>
+      </li>
+    </ul>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
