@@ -1,0 +1,9 @@
+isim: {name} e-mail: {email} adres: {address} tarih: {date}
+isim: {name} e-mail: {email} adres: {address} tarih: {date}
+isim: dfg e-mail: lhjgh@gmail.com adres: fhgfhg tarih: 2024-11-23
+isim: dfg - e-mail: lhjgh@gmail.com - adres: fhgfhg - tarih: 2024-11-23
+isim: dfg - e-mail: lhjgh@gmail.com - adres: fhgfhg - tarih: 2024-11-23
+isim: dfg - e-mail: lhjgh@gmail.com - adres: fhgfhg - tarih: 2024-11-23
+isim: dfg - e-mail: lhjgh@gmail.com - adres: fhgfhg - tarih: 2024-11-23
+isim: dfg - e-mail: lhjgh@gmail.com - adres: fhgfhg - tarih: 2024-11-23
+isim: dfg - e-mail: lhjgh@gmail.com - adres: fhgfhg - tarih: 2024-11-23
